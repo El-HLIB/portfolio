@@ -6,6 +6,6 @@ Ouvrir : double-cliquer index.html (ou URL).
 
 Auteurs : Furkan USTUN (TSTI2D)
 
-Techno : HTML/CSS + (option) JS
+Techno : HTML/CSS
 
 QR :
