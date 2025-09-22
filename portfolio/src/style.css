@@ -3,8 +3,8 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background: #f5f5f5;
-  color: #222;
+  background: #001f3f; 
+  color: #eee; 
 }
 
 header {
@@ -67,6 +67,23 @@ footer {
   text-decoration: none;
   margin-top: 1rem;
 }
+
 .fiche-synthese a:hover {
   background: #1e8449;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
