@@ -3,8 +3,11 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background: #001f3f; 
-  color: #eee; 
+
+  /* Effet de vent en fond */
+  background: linear-gradient(120deg, #e0f7fa, #ffffff, #e0f7fa);
+  background-size: 300% 300%;
+  animation: windBg 10s ease-in-out infinite;
 }
 
 header {
@@ -86,4 +89,9 @@ html, body {
 
 main {
   flex: 1;
+}
+@keyframes windBg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
