@@ -6,38 +6,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio et classeur virtuel pour le bac STI2D SIN">
   <link rel="stylesheet" href="style.css">
+  <script src="admin.js"></script>
 </head>
 <body>
   <div class="wrapper">
 
     <header>
-      <h1>Classeur Virtuel — STI2D SIN</h1>
+      <h1 data-editable="true" data-key="header_title">Classeur Virtuel — STI2D SIN</h1>
       <nav>
         <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="journal.html">Journal de bord</a></li>
-          <li><a href="projet.html">Projet</a></li>
-          <li><a href="realisations.html">Réalisations</a></li>
-          <li><a href="dossier.html">Dossier technique</a></li>
-          <li><a href="apropos.html">À propos</a></li>
+          <li><a href="index.html" data-editable="true" data-key="nav_accueil">Accueil</a></li>
+          <li><a href="journal.html" data-editable="true" data-key="nav_journal">Journal de bord</a></li>
+          <li><a href="projet.html" data-editable="true" data-key="nav_projet">Projet</a></li>
+          <li><a href="realisations.html" data-editable="true" data-key="nav_realisations">Réalisations</a></li>
+          <li><a href="dossier.html" data-editable="true" data-key="nav_dossier">Dossier technique</a></li>
+          <li><a href="apropos.html" data-editable="true" data-key="nav_apropos">À propos</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
       <section id="intro">
-        <h2>Mon Classeur Virtuel</h2>
-        <p>Ce site regroupe mes travaux réalisés en classe de <strong>STI2D spécialité SIN</strong> : 
-        cours, comptes-rendus, projets et preuves de compétences.</p>
+        <h2 data-editable="true" data-key="intro_title">Mon Classeur Virtuel</h2>
+        <p data-editable="true" data-key="intro_text">
+          Ce site regroupe mes travaux réalisés en classe de 
+          <strong>STI2D spécialité SIN</strong> : cours, comptes-rendus, projets et preuves de compétences.
+        </p>
       </section>
     </main>
 
     <footer>
-      <p>&copy; 2025 - USTUN Furkan | Terminale STI2D SIN</p>
+      <p data-editable="true" data-key="footer_text">&copy; 2025 - USTUN Furkan | Terminale STI2D SIN</p>
     </footer>
-
   </div>
 
-  <script src="src/script.js"></script>
+  <!-- === ADMIN PANEL === -->
+  <div id="admin-overlay" class="admin-hidden">
+    <div class="admin-modal">
+      <h3>Admin — connexion</h3>
+      <input id="admin-password" type="password" placeholder="Mot de passe admin">
+      <div class="admin-row">
+        <button id="admin-login">Se connecter</button>
+        <button id="admin-logout" class="hidden">Déconnexion</button>
+      </div>
+      <p id="admin-msg" class="admin-msg"></p>
+
+      <hr>
+
+      <div id="admin-controls" class="hidden">
+        <button id="toggle-edit">Activer / Désactiver édition</button>
+        <button id="save-local">Sauvegarder (local)</button>
+        <button id="export-json">Exporter (.json)</button>
+        <input id="import-file" type="file" accept="application/json">
+        <button id="import-json">Importer</button>
+      </div>
+
+      <button id="close-admin" class="close-admin">Fermer</button>
+    </div>
+  </div>
+
+  <!-- Boutons flottants -->
+  <button id="open-admin" class="admin-open-btn" title="Ouvrir admin">🔧 Admin</button>
+  <button id="open-client" class="admin-open-btn" title="Mode Client">👁️ Client</button>
+
+  <script src="src/admin.js"></script>
 </body>
 </html>
